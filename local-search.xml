@@ -5,8 +5,8 @@
   
   <entry>
     <title>分布式系统基础</title>
-    <link href="/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
-    <url>/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</url>
+    <link href="/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"/>
+    <url>/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</url>
     
     <content type="html"><![CDATA[<h2 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个分布式系统是:<strong>一组独立的计算机</strong>，在用户看来是一个<strong>单一的连贯系统</strong>。其中，位于联网计算机上的硬件或软件组件仅通过传递消息来通信和协调其操作。</p><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol><li><p><strong>资源共享</strong>：分布式系统中的多个节点可以共享资源（如计算能力、存储和网络带宽），并且这些资源可以被多个用户和应用程序访问。</p></li><li><p><strong>并发性</strong>：分布式系统允许多个用户和应用程序同时访问和操作系统中的资源。<strong>这种并发性是分布式系统设计的核心</strong>。</p></li><li><p><strong>透明性</strong>：用户和应用程序通常不需要关心资源的物理位置。分布式系统通过中间件和协议提供透明性，使得资源的访问和管理看起来像是在单一系统中进行。</p></li><li><p><strong>容错性</strong>：分布式系统能够在部分节点发生故障时继续运行。系统通常会实现冗余和备份机制，以确保高可用性。</p></li><li><p><strong>可扩展性</strong>：系统规模有一定规模的扩展，无论是资源还是用户，系统的性能保持在一定的水平。</p></li><li><p><strong>异构性</strong>：分布式系统可以由不同类型的计算机和操作系统组成，能够在异构环境中协同工作。</p></li><li><p><strong>没有全局时钟</strong>：每个机器的有各自的时间，没有办法做到统一，程序间的协调靠交换消息</p></li><li><p><strong>故障独立性</strong>：一些进程出现故障，并不能保证其它进程都能知道</p></li></ol><h3 id="中间件的作用"><a href="#中间件的作用" class="headerlink" title="中间件的作用"></a>中间件的作用</h3><ol><li><p><strong>通信管理</strong>：分布式中间件提供了不同系统或服务之间的通信机制，支持异步消息传递、远程过程调用（RPC）等，简化了系统间的交互。</p></li><li><p><strong>负载均衡</strong>：通过分布式中间件，可以实现请求的负载均衡，将流量分配到多个服务实例上，提高系统的可用性和性能。</p></li><li><p><strong>事务管理</strong>：中间件可以提供分布式事务管理，确保多个服务之间的数据一致性。</p></li><li><p><strong>安全性</strong>：中间件可以提供安全机制，如身份验证和授权，确保只有经过授权的用户和服务可以访问特定资源。</p></li><li><p><strong>监控与管理</strong>：分布式中间件通常集成监控工具，帮助开发者和运维人员实时监控系统的健康状态和性能指标。</p></li><li><p><strong>容错与恢复</strong>：中间件可以实现故障检测和自动恢复机制，提高系统的可靠性和可用性。</p></li></ol><p>中间件的插入，实现了分布式系统对用户的透明性，用户不用再关注分布式系统底层的架构和通信，只需要调用中间层暴露出来的接口。</p>]]></content>
     
@@ -16,19 +16,6 @@
       <category>分布式系统</category>
       
     </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2024/09/05/hello-world/"/>
-    <url>/2024/09/05/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
     
     
   </entry>
