@@ -26,16 +26,16 @@
 <meta property="og:site_name" content="missing&#39;s blog">
 <meta property="og:description" content="思考题5.1 引发的问题 当通过 kseg0 对设备进行写操作时，如果写入操作被缓存，那么实际的数据并没有直接写入设备寄存器，而是暂存在缓存中，如果发生断电等情况，缓存中的数据可能会丢失，这可能会导致数据写入失败。  设备物理内存处的数据不只由 CPU 决定，还和对应的外设的行为有关。而缓存只能记录CPU 的读写结果，无法在外设对数据进行改时及时调整。   设备操作的差异对于串口设备来说，读写频繁">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://missing666.github.io/img/lab5-1.PNG">
-<meta property="og:image" content="https://missing666.github.io/img/lab5-2.PNG">
-<meta property="og:image" content="https://missing666.github.io/img/lab5-3.PNG">
+<meta property="og:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-1.PNG">
+<meta property="og:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-2.PNG">
+<meta property="og:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-3.PNG">
 <meta property="article:published_time" content="2024-09-06T07:27:30.000Z">
-<meta property="article:modified_time" content="2024-09-06T07:35:33.702Z">
+<meta property="article:modified_time" content="2024-09-06T08:01:33.083Z">
 <meta property="article:author" content="missing">
 <meta property="article:tag" content="os">
 <meta property="article:tag" content="文件系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://missing666.github.io/img/lab5-1.PNG">
+<meta name="twitter:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-1.PNG">
   
   
   
@@ -326,7 +326,7 @@
 <li>一个文件控制块有直接指针 + 间接指针共1024个 ，每个指针指向一个磁盘块，存储着该文件的一部分文件数据。文件系统支持的单个文件最大，则表示1024个指针全部有效，一共指向了1024个磁盘块存着文件数据，又一个磁盘块4KB,则单个文件最大为4KB*1024&#x3D;4MB</li>
 </ul>
 <p>5.3</p>
-<p><img src="/img/lab5-1.PNG" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<p><img src="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-1.PNG" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* Maximum disk size we can handle (1GB) */</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> DISKMAX 0x40000000</span><br></code></pre></td></tr></table></figure>
 
 <p>我们实验使用的内核支持的最大磁盘大小为1GB</p>
@@ -344,7 +344,7 @@
 
 
 <p>5.7</p>
-<p><img src="/img/lab5-2.PNG" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<p><img src="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-2.PNG" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li><code>ENV_CREATE(user_env)</code> 和 <code>ENV_CREATE(fs_serv)</code> 由初始化进程 <code>init()</code> 执行以创建用户和文件系统服务环境。<code>init()</code> 启动时创建这些环境，其中 <code>fs</code> 和 <code>user</code> 环境执行它们的初始化工作。</li>
 <li><code>fs</code> 环境初始化后，<code>serv_init()</code> 和 <code>fs_init()</code> 函数运行，进入 <code>serv()</code> 循环，监听 <code>ipc_receive()</code> 的请求并将环境标记为 <code>ENV_NOT_RUNNABLE</code>，直到接收到 <code>user</code> 环境的 <code>ipc_send(fsreq)</code> 请求再变为可运行。</li>
@@ -391,7 +391,7 @@
 
 <p>上述定义了文件控制块，是整个文件系统需要理解的最关键的结构体，其中指明了文件的索引方式，文件控制块的大小，文件控制块的名称</p>
 <p><strong>文件系统的用户接口</strong>：</p>
-<p><img src="/img/lab5-3.PNG" srcset="/img/loading.gif" lazyload alt="alt text"><br>用户程序在发出文件系统操作请求时，将请求的内容放在对应的结构体中进行消息的传递，fs_serv 进程收到其他进行的 IPC 请求后，IPC 传递的消息包含了请求的类型和其他必要的参数，根据请求的类型执行相应的文件操作（文件的增、删、改、查等），将结果重新通过IPC反馈给用户程序。用户程序在发出文件系统操作请求时，将请求的内容放在对应的结构体中进行消息的传递，fs_serv 进程收到其他进行的 IPC 请求后，IPC 传递的消息包含了请求的类型和其他必要的参数，根据请求的类型执行相应的文件操作（文件的增、删、改、查等），将结果重新通过IPC馈给用户程序。</p>
+<p><img src="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/lab5-3.PNG" srcset="/img/loading.gif" lazyload><br>用户程序在发出文件系统操作请求时，将请求的内容放在对应的结构体中进行消息的传递，fs_serv 进程收到其他进行的 IPC 请求后，IPC 传递的消息包含了请求的类型和其他必要的参数，根据请求的类型执行相应的文件操作（文件的增、删、改、查等），将结果重新通过IPC反馈给用户程序。用户程序在发出文件系统操作请求时，将请求的内容放在对应的结构体中进行消息的传递，fs_serv 进程收到其他进行的 IPC 请求后，IPC 传递的消息包含了请求的类型和其他必要的参数，根据请求的类型执行相应的文件操作（文件的增、删、改、查等），将结果重新通过IPC馈给用户程序。</p>
 <h1 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h1><p>lab5课下总体实验难度较大，涉及较多的结构体。同时综合了lab4的进程ipc问题。<br>我们首先需要弄明白每个结构体的作用，弄清楚文件系统抽象出来的结构体对应到哪一部分，结构体中的每个属性的作用。<br>其次，我们需要再次结合lab4的内容，搞清楚文件系统服务的函数调用过程，文件系统服务是一个单独的文件服务进程进行管理的，其他进程需要通过ipc与之通信，才能在进程中对文件进行操作。</p>
 
                 
@@ -485,9 +485,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/" title="os-lab6">
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab4/" title="os-lab4">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">os-lab6</span>
+                        <span class="hidden-mobile">os-lab4</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -495,8 +495,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="分布式系统基础">
-                        <span class="hidden-mobile">分布式系统基础</span>
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/" title="os-lab6">
+                        <span class="hidden-mobile">os-lab6</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

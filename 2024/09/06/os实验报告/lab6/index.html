@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="missing&#39;s blog">
 <meta property="og:description" content="思考题6.1 以下是修改的代码： 1234567891011121314151617181920212223242526272829303132#include&lt;stdlib.h&gt;#include&lt;unistd.h&gt;int fildes[2];char buf[100];int status;int main()&#123;    status &#x3D; pipe(fildes)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://missing666.github.io/img/lab6-1.PNG">
+<meta property="og:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/lab6-1.PNG">
 <meta property="article:published_time" content="2024-09-06T07:27:30.000Z">
-<meta property="article:modified_time" content="2024-09-06T07:35:42.426Z">
+<meta property="article:modified_time" content="2024-09-06T08:00:48.303Z">
 <meta property="article:author" content="missing">
 <meta property="article:tag" content="os">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://missing666.github.io/img/lab6-1.PNG">
+<meta name="twitter:image" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/lab6-1.PNG">
   
   
   
@@ -338,7 +338,7 @@
 <p>参照上述代码，在MOS中我们用到的shell命令除了<code>echocmds</code>和注释两种情况外，都需要<code>fork</code>一个子shell来处理输入的命令。</p>
 <p>Linux的<code>cd</code>指令使用频率较高，若设置为外部指令必然会在<code>cd</code>的时候多次调用<code>fork</code>生成子进程，这显然是低效的。将其设置为内部指令可以切实提高我们操作系统的效率。</p>
 <p>6.8</p>
-<p><img src="/img/lab6-1.PNG" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<p><img src="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/lab6-1.PNG" srcset="/img/loading.gif" lazyload alt="spawn流程图"></p>
 <ul>
 <li>总共spawn了两次，分别是由最初被<code>fork</code>出的2803进程<code>spawn</code>出了3805进程，以及3004(被2803进程在<code>parsecmd</code>时<code>fork</code>得到)进程<code>spawn</code>出了4006进程。</li>
 <li>观察到了四次进程销毁：<br>2803进程：由主shell进程fork出来的子shell进程，用于解析并执行当前命令；<br>3004进程：由2803进程fork出来的子进程，用于解析并执行管道右端的命令；<br>3805进程：由2803进程spawn出来的子进程，用于执行管道左边的命令；<br>4006进程：由3004进程spawn出来的子进程，用于执行管道右边的命令；</li>
@@ -538,9 +538,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab4/" title="os-lab4">
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/" title="os-lab5">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">os-lab4</span>
+                        <span class="hidden-mobile">os-lab5</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -548,8 +548,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/" title="os-lab5">
-                        <span class="hidden-mobile">os-lab5</span>
+                      <a href="/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="分布式系统基础">
+                        <span class="hidden-mobile">分布式系统基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
