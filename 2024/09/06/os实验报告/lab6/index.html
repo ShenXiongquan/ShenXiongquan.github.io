@@ -19,24 +19,24 @@
   <meta name="author" content="missing">
   <meta name="keywords" content="missing,博客,北航,BUAA">
   
-    <meta name="description" content="lab522373496 申雄全 思考题6.1 以下是修改的代码： 1234567891011121314151617181920212223242526272829303132#include&lt;stdlib.h&gt;#include&lt;unistd.h&gt;int fildes[2];char buf[100];int status;int main()&#123;    stat">
+    <meta name="description" content="思考题6.1 以下是修改的代码： 1234567891011121314151617181920212223242526272829303132#include&lt;stdlib.h&gt;#include&lt;unistd.h&gt;int fildes[2];char buf[100];int status;int main()&#123;    status &#x3D; pipe(fildes)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="missing&#39;s blog">
+<meta property="og:title" content="os-lab6">
 <meta property="og:url" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/index.html">
 <meta property="og:site_name" content="missing&#39;s blog">
-<meta property="og:description" content="lab522373496 申雄全 思考题6.1 以下是修改的代码： 1234567891011121314151617181920212223242526272829303132#include&lt;stdlib.h&gt;#include&lt;unistd.h&gt;int fildes[2];char buf[100];int status;int main()&#123;    stat">
+<meta property="og:description" content="思考题6.1 以下是修改的代码： 1234567891011121314151617181920212223242526272829303132#include&lt;stdlib.h&gt;#include&lt;unistd.h&gt;int fildes[2];char buf[100];int status;int main()&#123;    status &#x3D; pipe(fildes)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://missing666.github.io/img/lab6-1.PNG">
-<meta property="article:published_time" content="2024-09-06T07:05:37.194Z">
-<meta property="article:modified_time" content="2024-09-06T07:24:10.011Z">
+<meta property="article:published_time" content="2024-09-06T07:27:30.000Z">
+<meta property="article:modified_time" content="2024-09-06T07:29:33.085Z">
 <meta property="article:author" content="missing">
-<meta property="article:tag" content="missing,博客,北航,BUAA">
+<meta property="article:tag" content="os">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://missing666.github.io/img/lab6-1.PNG">
   
   
   
-  <title>missing&#39;s blog</title>
+  <title>os-lab6 - missing&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="os-lab6"></span>
           
         </div>
 
@@ -226,7 +226,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-06 15:05" pubdate>
+        <time datetime="2024-09-06 15:27" pubdate>
           2024年9月6日 下午
         </time>
       </span>
@@ -286,7 +286,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">os-lab6</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -299,8 +299,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="lab5"><a href="#lab5" class="headerlink" title="lab5"></a>lab5</h1><h2 id="22373496-申雄全"><a href="#22373496-申雄全" class="headerlink" title="22373496 申雄全"></a>22373496 申雄全</h2><hr>
-<h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><p>6.1</p>
+                <h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><p>6.1</p>
 <p>以下是修改的代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-type">int</span> fildes[<span class="hljs-number">2</span>];<br><span class="hljs-type">char</span> buf[<span class="hljs-number">100</span>];<br><span class="hljs-type">int</span> status;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>    status = pipe(fildes);<br>    <br>    <span class="hljs-keyword">if</span>(status == <span class="hljs-number">-1</span>)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;error\n&quot;</span>);<br>    &#125;<br>    <br>    <span class="hljs-keyword">switch</span>(fork())&#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">-1</span>:<br>            <span class="hljs-keyword">break</span>;<br>            <br>        <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:  <span class="hljs-comment">// 作为写者的子进程</span><br>         close(fildes[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// 关闭不用的读端</span><br>            write(fildes[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;Hello world\n&quot;</span>, <span class="hljs-number">12</span>); <span class="hljs-comment">// 向管道中写入数据</span><br>            close(fildes[<span class="hljs-number">1</span>]); <span class="hljs-comment">// 写入结束，关闭写端</span><br>            <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);<br>        <span class="hljs-keyword">default</span>: <span class="hljs-comment">// 作为读者的父进程</span><br>            close(fildes[<span class="hljs-number">1</span>]); <span class="hljs-comment">// 关闭不用的写端</span><br>            read(fildes[<span class="hljs-number">0</span>], buf, <span class="hljs-number">100</span>); <span class="hljs-comment">// 从管道中读数据</span><br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;father-process read:%s\n&quot;</span>, buf); <span class="hljs-comment">// 打印读出的数据</span><br>            close(fildes[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 读取结束，关闭读端</span><br>            <span class="hljs-built_in">exit</span>(EXIT_SUCESS);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
@@ -454,6 +453,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/os/" class="print-no-link">#os</a>
+      
+    </div>
   
 </div>
 
@@ -463,7 +490,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>os-lab6</div>
       <div>https://missing666.github.io/2024/09/06/os实验报告/lab6/</div>
     </div>
     <div class="license-meta">
@@ -508,12 +535,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab4/" title="os-lab4">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">os-lab4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/" title="os-lab5">
+                        <span class="hidden-mobile">os-lab5</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

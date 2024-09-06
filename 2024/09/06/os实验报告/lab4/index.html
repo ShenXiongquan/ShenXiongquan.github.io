@@ -19,25 +19,25 @@
   <meta name="author" content="missing">
   <meta name="keywords" content="missing,博客,北航,BUAA">
   
-    <meta name="description" content="lab422373496 申雄全 1.思考题4.1  内核在保存现场的时候是如何避免破坏通用寄存器的？  保存现场过程中，先通过k0寄存器暂存sp栈指针的值，之后将其余通用寄存器的值直接存到cp的协寄存器中。  系统陷入内核调用后可以直接从当时的&#96;$a0-$a3&#96;参数寄存器中得到用户调用&#96;msyscall&#96;留下的信息吗？  可以。从用户函数syscall_*()到内核函数sys_*()时，$a1-">
+    <meta name="description" content="1.思考题4.1  内核在保存现场的时候是如何避免破坏通用寄存器的？  保存现场过程中，先通过k0寄存器暂存sp栈指针的值，之后将其余通用寄存器的值直接存到cp的协寄存器中。  系统陷入内核调用后可以直接从当时的&#96;$a0-$a3&#96;参数寄存器中得到用户调用&#96;msyscall&#96;留下的信息吗？  可以。从用户函数syscall_*()到内核函数sys_*()时，$a1-$a3未改变,$a0在handle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="missing&#39;s blog">
+<meta property="og:title" content="os-lab4">
 <meta property="og:url" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab4/index.html">
 <meta property="og:site_name" content="missing&#39;s blog">
-<meta property="og:description" content="lab422373496 申雄全 1.思考题4.1  内核在保存现场的时候是如何避免破坏通用寄存器的？  保存现场过程中，先通过k0寄存器暂存sp栈指针的值，之后将其余通用寄存器的值直接存到cp的协寄存器中。  系统陷入内核调用后可以直接从当时的&#96;$a0-$a3&#96;参数寄存器中得到用户调用&#96;msyscall&#96;留下的信息吗？  可以。从用户函数syscall_*()到内核函数sys_*()时，$a1-">
+<meta property="og:description" content="1.思考题4.1  内核在保存现场的时候是如何避免破坏通用寄存器的？  保存现场过程中，先通过k0寄存器暂存sp栈指针的值，之后将其余通用寄存器的值直接存到cp的协寄存器中。  系统陷入内核调用后可以直接从当时的&#96;$a0-$a3&#96;参数寄存器中得到用户调用&#96;msyscall&#96;留下的信息吗？  可以。从用户函数syscall_*()到内核函数sys_*()时，$a1-$a3未改变,$a0在handle">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://missing666.github.io/img/lab4-1.PNG">
 <meta property="og:image" content="https://missing666.github.io/img/lab4-2.PNG">
-<meta property="article:published_time" content="2024-09-06T07:05:37.117Z">
-<meta property="article:modified_time" content="2024-09-06T07:23:17.542Z">
+<meta property="article:published_time" content="2024-09-06T07:27:30.000Z">
+<meta property="article:modified_time" content="2024-09-06T07:29:37.634Z">
 <meta property="article:author" content="missing">
-<meta property="article:tag" content="missing,博客,北航,BUAA">
+<meta property="article:tag" content="os">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://missing666.github.io/img/lab4-1.PNG">
   
   
   
-  <title>missing&#39;s blog</title>
+  <title>os-lab4 - missing&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="os-lab4"></span>
           
         </div>
 
@@ -227,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-06 15:05" pubdate>
+        <time datetime="2024-09-06 15:27" pubdate>
           2024年9月6日 下午
         </time>
       </span>
@@ -287,7 +287,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">os-lab4</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -300,8 +300,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="lab4"><a href="#lab4" class="headerlink" title="lab4"></a>lab4</h1><h2 id="22373496-申雄全"><a href="#22373496-申雄全" class="headerlink" title="22373496 申雄全"></a>22373496 申雄全</h2><hr>
-<h2 id="1-思考题"><a href="#1-思考题" class="headerlink" title="1.思考题"></a>1.思考题</h2><p>4.1</p>
+                <h2 id="1-思考题"><a href="#1-思考题" class="headerlink" title="1.思考题"></a>1.思考题</h2><p>4.1</p>
 <ol>
 <li><code>内核在保存现场的时候是如何避免破坏通用寄存器的？</code></li>
 </ol>
@@ -390,6 +389,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/os/" class="print-no-link">#os</a>
+      
+    </div>
   
 </div>
 
@@ -399,7 +426,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>os-lab4</div>
       <div>https://missing666.github.io/2024/09/06/os实验报告/lab4/</div>
     </div>
     <div class="license-meta">
@@ -444,9 +471,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab5/" title="">
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab3/" title="os-lab3">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">os-lab3</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -454,8 +481,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab3/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab6/" title="os-lab6">
+                        <span class="hidden-mobile">os-lab6</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
