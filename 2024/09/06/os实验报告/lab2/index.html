@@ -19,22 +19,25 @@
   <meta name="author" content="missing">
   <meta name="keywords" content="missing,博客,北航,BUAA">
   
-    <meta name="description" content="分布式系统定义一个分布式系统是:一组独立的计算机，在用户看来是一个单一的连贯系统。其中，位于联网计算机上的硬件或软件组件仅通过传递消息来通信和协调其操作。 特点 资源共享：分布式系统中的多个节点可以共享资源（如计算能力、存储和网络带宽），并且这些资源可以被多个用户和应用程序访问。  并发性：分布式系统允许多个用户和应用程序同时访问和操作系统中的资源。这种并发性是分布式系统设计的核心。  透明性：用">
+    <meta name="description" content="lab222373496 申雄全 1.思考题2.1在编写的 C 程序中，指针变量中存储的地址被视为虚拟地址MIPS汇编程序中lw和sw指令使用的地址被视为虚拟地址 2.2   使用宏来实现链表具有以下好处：用宏实现链表，可以避免重复劳动，因为宏没有规定返回值的类型。2.单向链表的插入操作的时间复杂度为O(1)，删除操作的时间复杂度为O(n)；循环链表的插入操作的时间复杂度为O(1)，删除操作的时间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分布式系统基础">
-<meta property="og:url" content="https://missing666.github.io/2024/09/06/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="missing&#39;s blog">
+<meta property="og:url" content="https://missing666.github.io/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab2/index.html">
 <meta property="og:site_name" content="missing&#39;s blog">
-<meta property="og:description" content="分布式系统定义一个分布式系统是:一组独立的计算机，在用户看来是一个单一的连贯系统。其中，位于联网计算机上的硬件或软件组件仅通过传递消息来通信和协调其操作。 特点 资源共享：分布式系统中的多个节点可以共享资源（如计算能力、存储和网络带宽），并且这些资源可以被多个用户和应用程序访问。  并发性：分布式系统允许多个用户和应用程序同时访问和操作系统中的资源。这种并发性是分布式系统设计的核心。  透明性：用">
+<meta property="og:description" content="lab222373496 申雄全 1.思考题2.1在编写的 C 程序中，指针变量中存储的地址被视为虚拟地址MIPS汇编程序中lw和sw指令使用的地址被视为虚拟地址 2.2   使用宏来实现链表具有以下好处：用宏实现链表，可以避免重复劳动，因为宏没有规定返回值的类型。2.单向链表的插入操作的时间复杂度为O(1)，删除操作的时间复杂度为O(n)；循环链表的插入操作的时间复杂度为O(1)，删除操作的时间">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-06T02:56:54.000Z">
-<meta property="article:modified_time" content="2024-09-06T03:26:38.634Z">
+<meta property="og:image" content="https://missing666.github.io/img/lab2-2.PNG">
+<meta property="og:image" content="https://missing666.github.io/img/lab2-1.PNG">
+<meta property="article:published_time" content="2024-09-06T07:05:36.702Z">
+<meta property="article:modified_time" content="2024-09-06T07:21:02.749Z">
 <meta property="article:author" content="missing">
-<meta property="article:tag" content="分布式">
+<meta property="article:tag" content="missing,博客,北航,BUAA">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://missing666.github.io/img/lab2-2.PNG">
   
   
   
-  <title>分布式系统基础 - missing&#39;s blog</title>
+  <title>missing&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="分布式系统基础"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -224,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-06 10:56" pubdate>
-          2024年9月6日 上午
+        <time datetime="2024-09-06 15:05" pubdate>
+          2024年9月6日 下午
         </time>
       </span>
     
@@ -236,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          740 字
+          1k 字
         
       </span>
     
@@ -247,7 +250,7 @@
         
         
         
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -284,12 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">分布式系统基础</h1>
+            <h1 id="seo-header"></h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年9月6日 上午
+                    本文最后更新于 2024年9月6日 下午
                   
                 
               </p>
@@ -297,40 +300,47 @@
             
               <div class="markdown-body">
                 
-                <h2 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个分布式系统是:<strong>一组独立的计算机</strong>，在用户看来是一个<strong>单一的连贯系统</strong>。其中，位于联网计算机上的硬件或软件组件仅通过传递消息来通信和协调其操作。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><p><strong>资源共享</strong>：分布式系统中的多个节点可以共享资源（如计算能力、存储和网络带宽），并且这些资源可以被多个用户和应用程序访问。</p>
-</li>
-<li><p><strong>并发性</strong>：分布式系统允许多个用户和应用程序同时访问和操作系统中的资源。<strong>这种并发性是分布式系统设计的核心</strong>。</p>
-</li>
-<li><p><strong>透明性</strong>：用户和应用程序通常不需要关心资源的物理位置。分布式系统通过中间件和协议提供透明性，使得资源的访问和管理看起来像是在单一系统中进行。</p>
-</li>
-<li><p><strong>容错性</strong>：分布式系统能够在部分节点发生故障时继续运行。系统通常会实现冗余和备份机制，以确保高可用性。</p>
-</li>
-<li><p><strong>可扩展性</strong>：系统规模有一定规模的扩展，无论是资源还是用户，系统的性能保持在一定的水平。</p>
-</li>
-<li><p><strong>异构性</strong>：分布式系统可以由不同类型的计算机和操作系统组成，能够在异构环境中协同工作。</p>
-</li>
-<li><p><strong>没有全局时钟</strong>：每个机器的有各自的时间，没有办法做到统一，程序间的协调靠交换消息</p>
-</li>
-<li><p><strong>故障独立性</strong>：一些进程出现故障，并不能保证其它进程都能知道</p>
-</li>
+                <h1 id="lab2"><a href="#lab2" class="headerlink" title="lab2"></a>lab2</h1><h2 id="22373496-申雄全"><a href="#22373496-申雄全" class="headerlink" title="22373496 申雄全"></a>22373496 申雄全</h2><hr>
+<h2 id="1-思考题"><a href="#1-思考题" class="headerlink" title="1.思考题"></a>1.思考题</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h3><p>在编写的 C 程序中，指针变量中存储的地址被视为<strong>虚拟地址</strong><br>MIPS汇编程序中<code>lw</code>和<code>sw</code>指令使用的地址被视为<strong>虚拟地址</strong></p>
+<h3 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h3><ol>
+<li></li>
 </ol>
-<h3 id="中间件的作用"><a href="#中间件的作用" class="headerlink" title="中间件的作用"></a>中间件的作用</h3><ol>
-<li><p><strong>通信管理</strong>：分布式中间件提供了不同系统或服务之间的通信机制，支持异步消息传递、远程过程调用（RPC）等，简化了系统间的交互。</p>
-</li>
-<li><p><strong>负载均衡</strong>：通过分布式中间件，可以实现请求的负载均衡，将流量分配到多个服务实例上，提高系统的可用性和性能。</p>
-</li>
-<li><p><strong>事务管理</strong>：中间件可以提供分布式事务管理，确保多个服务之间的数据一致性。</p>
-</li>
-<li><p><strong>安全性</strong>：中间件可以提供安全机制，如身份验证和授权，确保只有经过授权的用户和服务可以访问特定资源。</p>
-</li>
-<li><p><strong>监控与管理</strong>：分布式中间件通常集成监控工具，帮助开发者和运维人员实时监控系统的健康状态和性能指标。</p>
-</li>
-<li><p><strong>容错与恢复</strong>：中间件可以实现故障检测和自动恢复机制，提高系统的可靠性和可用性。</p>
-</li>
+<p>使用宏来实现链表具有以下好处：<br>用宏实现链表，可以避免重复劳动，因为宏没有规定返回值的类型。<br>2.<br>单向链表的插入操作的时间复杂度为O(1)，删除操作的时间复杂度为O(n)；<br>循环链表的插入操作的时间复杂度为O(1)，删除操作的时间复杂度为O(n)；<br>双向链表的插入操作的时间复杂度为O(1)，删除操作的时间复杂度为O(1)；</p>
+<h3 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h3><p>正确的结构选C</p>
+<h3 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h3><ol>
+<li></li>
 </ol>
-<p>中间件的插入，实现了分布式系统对用户的透明性，用户不用再关注分布式系统底层的架构和通信，只需要调用中间层暴露出来的接口。</p>
+<ul>
+<li>ASID可以唯一标识每个进程，可以为该进程提供地址空间保护，当TLB尝试解析虚拟页码时，它确保当前正在运行的进程的ASID与与虚拟页面关联的ASID匹配。</li>
+<li>同时也使得不同的虚拟地址空间可以映射到同一块物理地址，有利于提高CPU的利用率。</li>
+</ul>
+<ol start="2">
+<li></li>
+</ol>
+<p>4kc中ASID的位数为8位，说明可容纳不同地址的空间的最大数量位为$2^8$</p>
+<h3 id="2-5"><a href="#2-5" class="headerlink" title="2.5"></a>2.5</h3><p><code>tlb_invalidate</code> 调用了<code>tlb_out</code><br><code>tlb_invalidate</code> 函数实现删除特定虚拟地址在TLB<br>中的旧表项</p>
+<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs mips">LEAF(tlb_out)<br><span class="hljs-meta">.set</span> <span class="hljs-keyword">noreorder</span><br><span class="hljs-keyword"></span> <span class="hljs-keyword">mfc0 </span>   <span class="hljs-built_in">t0</span>, CP0_ENTRYHI //将 <span class="hljs-built_in">EntryHi</span>中key加载到寄存器<span class="hljs-built_in">t0</span>中<br> <span class="hljs-keyword">mtc0 </span>   <span class="hljs-built_in">a0</span>, CP0_ENTRYHI//将旧表项Key写入<span class="hljs-built_in">EntryHi</span><br> <span class="hljs-keyword">nop//空指令</span><br><span class="hljs-keyword"></span> <span class="hljs-keyword">tlbp </span>//根据<span class="hljs-built_in">EntryHi</span>中的Key查找对应的旧表项，将表项的索引存入Index<br> <span class="hljs-keyword">nop//空指令</span><br><span class="hljs-keyword"></span> <span class="hljs-keyword">mfc0 </span>   <span class="hljs-built_in">t1</span>, CP0_INDEX //将旧表项的索引存入<span class="hljs-built_in">t1</span>寄存器<br><span class="hljs-meta">.set</span> reorder<br> <span class="hljs-keyword">bltz </span>   <span class="hljs-built_in">t1</span>, NO_SUCH_ENTRY //如果<span class="hljs-built_in">t1</span>的值为负，则跳转到标签NO_SUCH_ENTRY处<br><span class="hljs-meta">.set</span> <span class="hljs-keyword">noreorder</span><br><span class="hljs-keyword"></span> <span class="hljs-keyword">mtc0 </span>   <span class="hljs-built_in">zero</span>, CP0_ENTRYHI //否则，向<span class="hljs-built_in">EntryHi</span>寄存器写入<span class="hljs-number">0</span><br> <span class="hljs-keyword">mtc0 </span>   <span class="hljs-built_in">zero</span>, CP0_ENTRYLO0//向<span class="hljs-built_in">EntryLo0</span>寄存器写入<span class="hljs-number">0</span><br> <span class="hljs-keyword">mtc0 </span>   <span class="hljs-built_in">zero</span>, CP0_ENTRYLO1//向<span class="hljs-built_in">EntryLo1</span>寄存器写入<span class="hljs-number">0</span><br> <span class="hljs-keyword">nop </span>  //空指令<br> <span class="hljs-keyword">tlbwi </span>//将<span class="hljs-built_in">EntryHi</span>和<span class="hljs-built_in">EntryLo0</span>、<span class="hljs-built_in">EntryLo1</span>中的值写入索引指定的表项<br><span class="hljs-meta">.set</span> reorder<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-6"><a href="#2-6" class="headerlink" title="2.6"></a>2.6</h3><ul>
+<li><p>MIPS主要采用的是页式管理系统，X86主要采用的是段页式。</p>
+</li>
+<li><p>MIPS 会触发TLB Refill 异常，内核的 tlb_refill_handler 会以 pgd_current 为当前进程的 PGD 基址，索引获得转换失败的虚址对应的 PTE，并将其填入 TLB，完了CPU 把刚刚转换失败的虚地址再走一下 TLB 就OK了。而 X86 在 TLB 不命中时，是由硬件 MMU 以 CR3 为当前进程的 PGD 基址，索引获得 PFN 后，直接输出 PA。同时 MMU 会填充 TLB 以加快下次转换的速度。</p>
+</li>
+<li><p>另外转换失败的虚址，MIPS 使用 BadVAddr 寄存器存放，X86 使用 CR2 存放。</p>
+</li>
+</ul>
+<h3 id="2-7"><a href="#2-7" class="headerlink" title="2.7"></a>2.7</h3><p>三级页表页目录的基地址为：<br> $PT_{base}|PT_{base}&gt;&gt;9|PT_{base}&gt;&gt;18$</p>
+<p>映射到页目录自身的页目录项:<br> $PT_{base}|PT_{base}&gt;&gt;9|PT_{base}&gt;&gt;18|PT_{base}&gt;&gt;27$</p>
+<h2 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h2><ol>
+<li>对于双向链表的理解：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> LIST_HEAD(name, type)                                                                      \</span><br><span class="hljs-meta"> struct name &#123;                                                                              \</span><br><span class="hljs-meta">  struct type *lh_first; <span class="hljs-comment">/* first element */</span>                                         \</span><br><span class="hljs-meta"> &#125;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LIST_ENTRY(type)                                                                           \</span><br><span class="hljs-meta"> struct &#123;                                                                                   \</span><br><span class="hljs-meta">  struct type *le_next;  <span class="hljs-comment">/* next element */</span>                                          \</span><br><span class="hljs-meta">  struct type **le_prev; <span class="hljs-comment">/* address of previous next element */</span>                      \</span><br><span class="hljs-meta"> &#125;</span><br><br>LIST_HEAD(Page_list, Page);<br><span class="hljs-keyword">typedef</span> <span class="hljs-title function_">LIST_ENTRY</span><span class="hljs-params">(Page)</span> Page_LIST_entry_t;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Page</span> &#123;</span><br> Page_LIST_entry_t pp_link; <span class="hljs-comment">/* free list link */</span><br><br> <span class="hljs-comment">// Ref is the count of pointers (usually in page table entries)</span><br> <span class="hljs-comment">// to this page.  This only holds for pages allocated using</span><br> <span class="hljs-comment">// page_alloc.  Pages allocated at boot time using pmap.c&#x27;s &quot;alloc&quot;</span><br> <span class="hljs-comment">// do not have valid reference count fields.</span><br><br> u_short pp_ref;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+
+<p>根据上述定义代码可以很好的理解页中双向链表的结构。</p>
+<ol start="2">
+<li>难点在于二级页表的查询机制和相关函数的理解：<br><img src="/img/lab2-2.PNG" srcset="/img/loading.gif" lazyload><br>重点在于对pgdir_walk函数的理解，该函数构建了虚拟地址对应的一级页目录项和二级页表的对应关系。其中对于指针所指向的地址理解也十分重要<br><img src="/img/lab2-1.PNG" srcset="/img/loading.gif" lazyload><br>参考上图<br>pgdir代表的是一级页表基地址<br>pgdir_entryp则是代表查询的页目录项地址<br>*pgdir_entryp存的则是对应二级页表的物理页号和权限位<br>*ppte存的则是该页对应的二级页表项的地址。</li>
+</ol>
+<h2 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h2><p>lab2实验的整体难度较高，涉及了mips的内存管理。尤其是其中的二级页表和快表机制在实际写代码时比较绕，自映射也很难理解，花费了大量时间和精力理解。同时需要完成的内容较多，主要涉及了c语言的指针，容易搞混。</p>
 
                 
               </div>
@@ -339,34 +349,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="category-chain-item">分布式系统</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" class="print-no-link">#分布式</a>
-      
-    </div>
   
 </div>
 
@@ -376,8 +358,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>分布式系统基础</div>
-      <div>https://missing666.github.io/2024/09/06/分布式系统基础/分布式系统基础/</div>
+      <div></div>
+      <div>https://missing666.github.io/2024/09/06/os实验报告/lab2/</div>
     </div>
     <div class="license-meta">
       
@@ -421,7 +403,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab0/" title="">
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab3/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
@@ -430,6 +412,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/09/06/os%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/lab1/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
