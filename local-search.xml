@@ -20,7 +20,9 @@
     
     <tags>
       
-      <tag>os,git</tag>
+      <tag>os</tag>
+      
+      <tag>git</tag>
       
     </tags>
     
@@ -45,7 +47,9 @@
     
     <tags>
       
-      <tag>os,Makefile</tag>
+      <tag>os</tag>
+      
+      <tag>Makefile</tag>
       
     </tags>
     
@@ -70,7 +74,9 @@
     
     <tags>
       
-      <tag>os,内存管理</tag>
+      <tag>os</tag>
+      
+      <tag>内存管理</tag>
       
     </tags>
     
@@ -95,7 +101,9 @@
     
     <tags>
       
-      <tag>os,内存管理</tag>
+      <tag>os</tag>
+      
+      <tag>内存管理</tag>
       
     </tags>
     
@@ -120,7 +128,9 @@
     
     <tags>
       
-      <tag>os,内核</tag>
+      <tag>os</tag>
+      
+      <tag>内核</tag>
       
     </tags>
     
@@ -145,7 +155,9 @@
     
     <tags>
       
-      <tag>os,shell</tag>
+      <tag>os</tag>
+      
+      <tag>shell</tag>
       
     </tags>
     
@@ -170,7 +182,9 @@
     
     <tags>
       
-      <tag>os,文件系统</tag>
+      <tag>os</tag>
+      
+      <tag>文件系统</tag>
       
     </tags>
     
