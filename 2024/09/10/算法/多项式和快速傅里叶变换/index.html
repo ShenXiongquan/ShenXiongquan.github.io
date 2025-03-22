@@ -27,7 +27,7 @@
 <meta property="og:description" content="多项式和快速傅里叶变换FFT算法多项式用点值表示 首先设一个多项式 $A(x)$ $A(x)&#x3D;\sum_{i&#x3D;0}^{n-1}a_ix^i&#x3D;a_0+a_1x+a_2x^2+…+a_{n-1}x^{n-1}$ 按$A(x)$下标的奇偶性把 $A(x)$ 分成两半，右边再提一个$x$ ${A(x)&#x3D;(a_0+a_2x^2+…+a_{n-2}x^{n-2})+(a">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-10T08:28:08.000Z">
-<meta property="article:modified_time" content="2025-03-22T14:52:25.261Z">
+<meta property="article:modified_time" content="2025-03-22T15:02:58.140Z">
 <meta property="article:author" content="missing">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -307,7 +307,7 @@
 <p>$A_2(x)&#x3D;a_1+a_3x+a_5x^2+…+a_{n-1}x^{​{n \over 2}-1}$</p>
 <p>比较明显得出</p>
 <p>$A(x)&#x3D;A_1(x^2)+xA_2(x^2)$</p>
-<p>单位根：<br>单位根<br>复数$\omega$满足$\omega^n&#x3D;1$，称$\omega$是n次单位根<br>$\omega_n^k&#x3D;\cos{k\over n}2\pi +i\sin{k\over n} 2\pi$<br>再设 $k&lt; {n\over 2}$ ，把 $\omega^k_n$ 作为 $x$ 代入 $A(x)$（接下来几步变换要多想想单位根的性质）</p>
+<p>单位根：<br>复数$\omega$满足$\omega^n&#x3D;1$，称$\omega$是n次单位根<br>$\omega_n^k&#x3D;\cos{k\over n}2\pi +i\sin{k\over n} 2\pi$<br>再设 $k&lt; {n\over 2}$ ，把 $\omega^k_n$ 作为 $x$ 代入 $A(x)$（接下来几步变换要多想想单位根的性质）</p>
 <p>$A(\omega^k_n)$<br>$&#x3D;A_1( (\omega^k_n)^2 )+\omega^k_nA_2( ( \omega^k_n)^2 )$<br>$&#x3D;A_1(\omega_n^{2k})+\omega_n^kA_2(\omega_n^{2k})$<br>$&#x3D;A_1( \omega^k_{n\over2} )+\omega^k_nA_2( \omega^k_{n \over 2} )$</p>
 <p>那么对于${A(\omega^{k+{n\over2}}_n)}$的话，代入<br>${\omega^{k+{n \over 2}}_n}$</p>
 <p>$A(\omega^{k+{n\over 2}}_n)&#x3D;A_1(\omega^{2k+n}_n)+\omega^{k+{n\over 2}}_nA_2(\omega^{2k+n}_n)$</p>
